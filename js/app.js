@@ -79,5 +79,5 @@ function enviarEmail(e){
     setTimeout(function(){
       enviado.remove();
       document.querySelector('#enviar-mail').reset();
-    }, 3000;
+    }, 3000);
   },2000);
