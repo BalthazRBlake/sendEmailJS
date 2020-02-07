@@ -23,6 +23,10 @@ function validarCampo(){
   
   validarLongitud(this);
   
+  if(this.type === 'email'){
+    validarEmail(this);
+  }
+  
   let errors = document.querySelectorAll('.error');
   
   if(email.value !== '' && asunto.value !== '' && mensaje.value !== ''){
@@ -41,5 +45,17 @@ function validarLongitud(campo){
   } else {
     campo.style.borderBottomColor = 'Red';
     campo.classList.add('error');
+  }
+}
+
+function validarEmail(email){
+  const mensaje = email.value;
+  
+  if(mensaje.indexOf('@') !== -1){
+    email.style.borderBottomColor = 'Green';
+    email.classList.remove('error');
+  } else {
+    email.style.borderBottomColor = 'Red';
+    email.classList.add('error');
   }
 }
