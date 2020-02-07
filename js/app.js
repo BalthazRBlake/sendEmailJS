@@ -25,7 +25,7 @@ function validarCampo(){
   
   let errors = document.querySelector('.error');
   
-  if(email.value !== '' && asunto.value !== '' && mensaje.value !== '' &&){
+  if(email.value !== '' && asunto.value !== '' && mensaje.value !== ''){
     if(errors.length === 3){
       btnEnviar.disabled = false;
     }   
