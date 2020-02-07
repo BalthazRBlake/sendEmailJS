@@ -23,7 +23,7 @@ function validarCampo(){
   
   validarLongitud(this);
   
-  let errors = document.querySelector('.error');
+  let errors = document.querySelectorAll('.error');
   
   if(email.value !== '' && asunto.value !== '' && mensaje.value !== ''){
     if(errors.length === 3){
@@ -33,7 +33,7 @@ function validarCampo(){
 }
 
 function validarLongitud(campo){
-  console.log(campo.value.length);
+  //console.log(campo.value.length);
   
   if(campo.value.length > 3){
     campo.style.borderBottomColor = 'Green';
