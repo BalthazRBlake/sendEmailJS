@@ -20,8 +20,16 @@ function inicioApp(){
 }
 
 function validarCampo(){
-  console.log('valCamp');
+  
   validarLongitud(this);
+  
+  let errors = document.querySelector('.error');
+  
+  if(email.value !== '' && asunto.value !== '' && mensaje.value !== '' &&){
+    if(errors.length === 3){
+      btnEnviar.disabled = false;
+    }   
+  }
 }
 
 function validarLongitud(campo){
