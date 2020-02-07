@@ -63,6 +63,7 @@ function validarEmail(email){
 }
 
 function enviarEmail(e){
+  
   e.preventDefault();
   const spinnerGif = document.querySelector('#spinner');
   
@@ -81,3 +82,4 @@ function enviarEmail(e){
       document.querySelector('#enviar-mail').reset();
     }, 3000);
   },2000);
+}
