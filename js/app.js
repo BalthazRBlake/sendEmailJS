@@ -12,6 +12,8 @@ function eventListeners(){
   email.addEventListener('blur', validarCampo);
   asunto.addEventListener('blur', validarCampo);
   mensaje.addEventListener('blur', validarCampo);
+  
+  btnEnviar.addEventListener('click', enviarEmail);
 }
 
 function inicioApp(){
@@ -59,3 +61,23 @@ function validarEmail(email){
     email.classList.add('error');
   }
 }
+
+function enviarEmail(e){
+  e.preventDefault();
+  const spinnerGif = document.querySelector('#spinner');
+  
+  spinnerGif.style.display = 'block';
+  
+  const enviado = document.createElement('img');
+  enviado.src = 'img/mail.gif';
+  enviado.style.display = 'blobk';
+  
+  setTimeout(function(){
+    spinnerGif.style.display = 'none';
+    document.querySelector('#loaders').appendChild( enviado );
+  
+    setTimeout(function(){
+      enviado.remove();
+      document.querySelector('#enviar-mail').reset();
+    }, 3000;
+  },2000);
